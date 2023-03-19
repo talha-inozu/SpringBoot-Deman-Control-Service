@@ -12,7 +12,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
         org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration.class
 })
-@ComponentScan(basePackages = "com.nirengi.dcs.data")
+@ComponentScan("com.nirengi.dcs")
 public class DcsApplication {
 
     public static void main(String[] args) {

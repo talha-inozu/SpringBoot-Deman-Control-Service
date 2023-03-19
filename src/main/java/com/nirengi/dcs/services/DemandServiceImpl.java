@@ -7,7 +7,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +26,14 @@ public class DemandServiceImpl implements DemandService{
 
     @Override
     public List<DemandDto> getAllDemands() {
-        return null;
+    List<DemandDto> responseList = new ArrayList<>();
+
+    Iterable<DemandEntity> entities = demandRepository.findAll();
+
+    for(DemandEntity entity:entities){
+        responseList.add(entityToDto(entity));
+    }
+        return responseList ;
     }
 
     @Override
@@ -58,11 +68,15 @@ public class DemandServiceImpl implements DemandService{
 
     @Override
     public DemandDto entityToDto(DemandEntity demandEntity) {
-        return null;
+        DemandDto responseDto = modelMapper.map(demandEntity,DemandDto.class);
+        return responseDto;
     }
 
     @Override
     public DemandEntity dtoToEntity(DemandDto demandDto) {
+
+
+
         return null;
     }
 }
