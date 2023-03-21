@@ -2,6 +2,7 @@ package com.nirengi.dcs.services;
 
 import com.nirengi.dcs.data.entity.DemandEntity;
 import com.nirengi.dcs.data.repository.DemandRepository;
+import com.nirengi.dcs.data.repository.UserRepository;
 import com.nirengi.dcs.dto.DemandDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,10 @@ import java.util.Map;
 @Service
 public class DemandServiceImpl implements DemandService{
 
-
     @Autowired
     DemandRepository demandRepository;
+    @Autowired
+    UserRepository userRepository;
     @Autowired
     ModelMapper modelMapper;
 
