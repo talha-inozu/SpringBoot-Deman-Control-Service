@@ -17,9 +17,9 @@ import java.util.Date;
 public class DemandDto {
 
     private Long id;
-    private String transceiverId;
+    private Long transceiverId;
 
-    private String receiverId;
+    private Long receiverId;
 
     private String demandDescription;
 

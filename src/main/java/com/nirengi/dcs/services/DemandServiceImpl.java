@@ -40,7 +40,16 @@ public class DemandServiceImpl implements DemandService{
 
     @Override
     public List<DemandDto> getReceivedDemandsByUserId(Long id) {
-        return null;
+        List<DemandDto> responseList = new ArrayList<>();
+        Iterable<DemandEntity> entities = demandRepository.findAll();
+
+        for(DemandEntity entity:entities){
+            if(entity.getReceiverId() == id)
+                responseList.add(entityToDto(entity));
+        }
+
+        return responseList ;
+
     }
 
     @Override

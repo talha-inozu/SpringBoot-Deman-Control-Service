@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/demand")
 public class DemandServiceController {
 
     @Autowired
@@ -17,10 +17,14 @@ public class DemandServiceController {
 
 
 
-    @RequestMapping(value = "/demands",method = RequestMethod.GET)
+    @RequestMapping(value = "/allDemands",method = RequestMethod.GET)
     public List<DemandDto> getAllDemands(){
         return  demandService.getAllDemands();
     }
 
+    @RequestMapping(value = "/receivedDemands/{id}",method = RequestMethod.GET)
+    public List<DemandDto> getReceivedDemandsByUserId(@PathVariable Long id){
+        return  demandService.getReceivedDemandsByUserId(id);
+    }
 
 }

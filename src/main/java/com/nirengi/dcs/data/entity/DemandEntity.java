@@ -22,9 +22,9 @@ import java.util.Date;
 @Table(name = "demands")
 public class DemandEntity extends BaseEntity implements Serializable {
     @Column(name = "transceiverId")
-    private String transceiverId;
+    private Long transceiverId;
     @Column(name = "receiverId")
-    private String receiverId;
+    private Long receiverId;
     @Column(name = "demandDescription")
     private String demandDescription;
     @Column(name = "demandTitle")
